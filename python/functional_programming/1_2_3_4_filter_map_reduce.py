@@ -1,10 +1,18 @@
 '''
 Real Python : Functional Programming in Python
 - https://realpython.com/courses/functional-programming-python/
+
+함수형 프로그래밍
+- 프로그램상의 부작용, 버그를 줄이는 패러다임. 불변인 자료구조를 주로 사용. 
+  복잡한 함수를 사용함으로서 얻는 부작용을 방지
+
+변하는 자료구조: List, Dict
+- 불변의 자료구조를 사용해라. 예를 들어서 병렬 프로그래밍을 할때 불변의 자료구조를 사용한다면
+  이때 굳이 자료구조에 락을 설정할 필요가 없어진다
 '''
 
 '''
-Section 1: immutable data strcutures
+Section 1: immutable data structures
 '''
 # namedtuple
 import collections

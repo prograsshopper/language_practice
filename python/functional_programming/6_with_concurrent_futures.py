@@ -3,6 +3,7 @@ Section 6: Parallel Processing With concurrent.futures
 
 '''
 import collections
+import concurrent.futures
 from pprint import pprint
 import os
 
@@ -32,3 +33,16 @@ def transform(x):
     print(f'Process {os.getpid()} Done {x.name}')
     return result
 
+start = time.time()
+
+# with concurrent.futures.ProcessPoolExecutor() as executor:
+#     result = executor.map(transform, scientists)
+
+# Thread -> do all things in a process
+with concurrent.futures.ThreadPoolExecutor() as executor:
+    result = executor.map(transform, scientists)
+
+end = time.time()
+
+print(f'time to completion: {end - start:.2f}s')
+pprint(result)
